@@ -1,0 +1,10 @@
+# Overview
+Project for a drone with a Raspberry Pi 3, a Navio2 flight controller board, and the Raspian 32-bit OS version Bookworm.
+
+# Cloning
+```
+sudo apt update && sudo apt install -y git
+cd ~ && git clone https://github.com/edpiedra/drone-navio2-rpi3-bookworm-32bit.git drone
+bash drone/install/install.sh
+# will ask to reboot a few times.  Run the same bash script when it restarts.
+```
