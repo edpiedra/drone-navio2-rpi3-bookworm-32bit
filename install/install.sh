@@ -20,7 +20,7 @@ if [ ! -d "$LOG_DIR" ]; then
     mkdir "$LOG_DIR" 
 fi
 
-if [ -f $NAVIO2_KERNAL_INSTALL_LOG ]; then
+if [ -f $NAVIO2_KERNAL_INSTALL_FLAG ]; then
     log "post-navio2 kernel reboot tasks starting..."
 
     for step in "$MAIN_SCRIPTS_DIR"/2[0-9][0-9]_*.sh; do 
@@ -31,7 +31,7 @@ if [ -f $NAVIO2_KERNAL_INSTALL_LOG ]; then
     
     log "✅ Install complete. Logs saved to: $LOG_FILE"
     exit 0
-elif [ -f $EXPANSION_INSTALL_LOG ]; then
+elif [ -f $EXPANSION_INSTALL_FLAG ]; then
     log "post-filesystem reboot tasks starting..."
 
     for step in "$MAIN_SCRIPTS_DIR"/1[0-9][0-9]_*.sh; do 
