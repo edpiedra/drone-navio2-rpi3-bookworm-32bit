@@ -20,7 +20,7 @@ if [ ! -d "$LOG_DIR" ]; then
     mkdir "$LOG_DIR" 
 fi
 
-if [ -f $NAVIO2_KERNAL_INSTALL_FLAG ]; then
+if [ -f $NAVIO2_KERNEL_INSTALL_FLAG ]; then
     log "post-navio2 kernel reboot tasks starting..."
 
     for step in "$MAIN_SCRIPTS_DIR"/2[0-9][0-9]_*.sh; do 
