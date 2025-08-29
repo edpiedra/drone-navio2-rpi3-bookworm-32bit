@@ -21,7 +21,8 @@ if [ -f "$NAVIO2_KERNEL_INSTALL_FLAG" ]; then
     log "Navio2 kernal install was already run successfully..."
 
     log "installing rcio.fw..."
-    sudo wget -qO /lib/firmware/rcio.fw $FIRMWARE_URL
+    sudo cp $RCIO_FIRMWARE /lib/firmware/
+#    sudo wget -qO /lib/firmware/rcio.fw $FIRMWARE_URL
 
     log "adding Navio2 overlays..."
     sudo bash "$MAIN_SCRIPTS_DIR/111_navio2_overlays.sh"
