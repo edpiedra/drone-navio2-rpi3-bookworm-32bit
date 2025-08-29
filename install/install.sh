@@ -20,16 +20,16 @@ if [ ! -d "$LOG_DIR" ]; then
     mkdir "$LOG_DIR" 
 fi
 
-if [ -f $NAVIO2_KERNEL_INSTALL_FLAG ]; then
+if [ -f $NAVIO2_FIRMWARE_INSTALL_FLAG ]; then
     log "post-navio2 kernel reboot tasks starting..."
 
     for step in "$MAIN_SCRIPTS_DIR"/2[0-9][0-9]_*.sh; do 
         run_step "$step"
     done 
 
-    bash $HOME/$SCRIPT_NAME/config/install/install.sh
-    
     log "✅ Install complete. Logs saved to: $LOG_FILE"
+    read -p "→ drone package installed. Press ENTER to reboot." _
+    sudo reboot
     exit 0
 elif [ -f $EXPANSION_INSTALL_FLAG ]; then
     log "post-filesystem reboot tasks starting..."

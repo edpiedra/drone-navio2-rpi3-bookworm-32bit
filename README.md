@@ -8,3 +8,14 @@ cd ~ && git clone https://github.com/edpiedra/drone-navio2-rpi3-bookworm-32bit.g
 bash drone/install/install.sh
 # will ask to reboot a few times.  Run the same bash script when it restarts.
 ```
+
+# Pulling updates
+```
+cd drone
+git pull origin
+```
+
+# Reinstall
+```
+bash drone/install/install.sh --reinstall
+```

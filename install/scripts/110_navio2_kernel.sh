@@ -11,9 +11,25 @@ BUILD_DIR="$HOME/navio2-kernel"
 FIRMWARE_URL="https://github.com/emlid/rcio-firmware/raw/master/rcio.fw"
 
 log "checking to see if previous install ran successfully..."
+if [ -f "$NAVIO2_FIRMWARE_INSTALL_FLAG" ]; then 
+    log "Navio2 firmware install ran successfully..."
+
+    return 0 
+fi 
+
 if [ -f "$NAVIO2_KERNEL_INSTALL_FLAG" ]; then 
     log "Navio2 kernal install was already run successfully..."
-    return 0 
+
+    log "installing rcio.fw..."
+    sudo wget -qO /lib/firmware/rcio.fw $FIRMWARE_URL
+
+    log "adding Navio2 overlays..."
+    sudo bash "$MAIN_SCRIPTS_DIR/111_navio2_overlays.sh"
+
+    touch "$NAVIO2_FIRMWARE_INSTALL_FLAG"
+
+    read -p "→ Navio2 kernel and overlays installed. Press ENTER to reboot." _
+    sudo reboot
 fi 
 
 log "installing build dependencies..."
@@ -65,13 +81,5 @@ sudo cp arch/arm/boot/dts/*.dtb /boot/
 sudo cp arch/arm/boot/dts/overlays/*.dtb* $BOOT_OVERLAYS_DIR/
 sudo cp arch/arm/boot/dts/overlays/README $BOOT_OVERLAYS_DIR/
 
-log "installing rcio.fw..."
-sudo wget -qO /lib/firmware/rcio.fw $FIRMWARE_URL
-
-log "adding Navio2 overlays..."
-sudo bash "$MAIN_SCRIPTS_DIR/111_navio2_overlays.sh"
-
 touch "$NAVIO2_KERNEL_INSTALL_FLAG"
 
-read -p "→ Navio2 kernel and overlays installed. Press ENTER to reboot." _
-sudo reboot
