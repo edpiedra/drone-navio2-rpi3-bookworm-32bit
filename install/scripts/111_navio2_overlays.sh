@@ -5,7 +5,7 @@ SCRIPT_NAME=$(basename "$0")
 
 MAIN_SCRIPTS_DIR="/home/pi/drone/install/scripts"
 source "$MAIN_SCRIPTS_DIR/00_common.env"
-export LOG_DIR="/home/pi/logs"
+export LOG_FILE="/home/pi/logs/install.log"
 source "$MAIN_SCRIPTS_DIR/00_lib.sh"
 
 STAMP="$(date +%Y%m%d-%H%M%S)"
