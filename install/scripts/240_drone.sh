@@ -9,7 +9,7 @@ source "$CONFIG_SCRIPTS_DIR/00_common.env"
 log "checking to see if previous install ran successfully..."
 if [ -f "$DRONE_INSTALL_FLAG" ]; then 
     log "OpenNI SDK install was already run successfully..."
-    return
+    exit 0
 fi 
 
 log "installing requirements in drone virtual environment..."

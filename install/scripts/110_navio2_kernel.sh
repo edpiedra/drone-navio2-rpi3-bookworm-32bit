@@ -14,7 +14,7 @@ log "checking to see if previous install ran successfully..."
 if [ -f "$NAVIO2_KERNEL_INSTALL_FLAG" ]; then 
     log "Navio2 kernel install was already run successfully"
 
-    return 0
+    exit 0
 fi 
 
 if [ -f "$NAVIO2_KERNEL_INSTALL_FLAG" ]; then 

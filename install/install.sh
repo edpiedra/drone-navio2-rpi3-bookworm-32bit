@@ -27,8 +27,7 @@ if [ -f $NAVIO2_KERNEL_INSTALL_FLAG ]; then
         run_step "$step"
     done 
 
-    log "✅ Install complete. Logs saved to: $LOG_FILE"
-    read -p "→ drone package installed. Press ENTER to reboot." _
+    read -p "→ drone package installed. Logs saved to: $LOG_FILE.  Press ENTER to reboot." _
     sudo reboot
     exit 0
 elif [ -f $EXPANSION_INSTALL_FLAG ]; then
