@@ -8,7 +8,7 @@ source "$MAIN_SCRIPTS_DIR/00_lib.sh"
 log "checking to see if previous install ran successfully..."
 if [ -f "$ARDUPILOT_INSTALL_FLAG" ]; then 
     log "ArduPilot install was already run successfully..."
-    return 0 
+    return
 fi 
 
 log "getting the code..."

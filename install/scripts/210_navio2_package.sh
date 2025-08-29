@@ -10,7 +10,7 @@ NAVIO2_GIT="https://github.com/emlid/Navio2.git"
 log "checking to see if previous install ran successfully..."
 if [ -f "$NAVIO2_PACKAGE_INSTALL_FLAG" ]; then 
     log "Navio2 package install was already run successfully..."
-    return 0 
+    return
 fi 
 
 log "installing system dependencies..."

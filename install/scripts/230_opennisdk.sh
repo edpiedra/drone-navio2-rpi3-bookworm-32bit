@@ -11,7 +11,7 @@ OPENNISDK_SOURCE="$PROJECT_DIR/sdks/$ARM_VERSION"
 log "checking to see if previous install ran successfully..."
 if [ -f "$OPENNISDK_INSTALL_FLAG" ]; then 
     log "OpenNI SDK install was already run successfully..."
-    return 0 
+    return 
 fi 
 
 log "installing prerequisites..."
