@@ -5,21 +5,10 @@ SCRIPT_NAME=$(basename "$0")
 source "$MAIN_SCRIPTS_DIR/00_common.env"
 source "$MAIN_SCRIPTS_DIR/00_lib.sh"
 
-INSTALL_FLAG="$LOG_DIR/ardupilot-built"
-
-
-
 log "checking to see if previous install ran successfully..."
 if [ -f "$ARDUPILOT_INSTALL_FLAG" ]; then 
     log "ArduPilot install was already run successfully..."
     exit 0
-fi 
-
-if [ -f "$INSTALL_FLAG" ]; then 
-  log "adding ArduPilot as a service..."
-  sudo bash "$MAIN_SCRIPTS_DIR/221_ardupilot_service.sh"
-
-  touch "$ARDUPILOT_INSTALL_FLAG"
 fi 
 
 log "getting the code..."
@@ -44,3 +33,7 @@ log "building ArduCopter for Navio2..."
 ./waf configure --board=navio2
 ./waf copter
 
+log "adding ArduPilot as a service..."
+sudo bash "$MAIN_SCRIPTS_DIR/221_ardupilot_service.sh"
+
+touch "$ARDUPILOT_INSTALL_FLAG"
