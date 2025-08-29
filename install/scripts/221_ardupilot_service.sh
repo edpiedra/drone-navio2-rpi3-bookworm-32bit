@@ -5,6 +5,7 @@ SCRIPT_NAME=$(basename "$0")
 
 MAIN_SCRIPTS_DIR="/home/pi/drone/install/scripts"
 source "$MAIN_SCRIPTS_DIR/00_common.env"
+LOG_DIR="/home/pi/logs"
 source "$MAIN_SCRIPTS_DIR/00_lib.sh"
 
 ARDUPILOT_BIN="$ARDUPILOT_DIR/build/navio2/bin/arducopter"
