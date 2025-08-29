@@ -7,10 +7,9 @@ source "$MAIN_SCRIPTS_DIR/00_lib.sh"
 source "$CONFIG_SCRIPTS_DIR/00_common.env"
 
 OPENNISDK_SOURCE="$PROJECT_DIR/sdks/$ARM_VERSION"
-INSTALL_FLAG="$LOG_DIR/opennisdk"
 
 log "checking to see if previous install ran successfully..."
-if [ -f "$INSTALL_FLAG" ]; then 
+if [ -f "$OPENNISDK_INSTALL_FLAG" ]; then 
     log "OpenNI SDK install was already run successfully..."
     return 0 
 fi 
@@ -64,4 +63,4 @@ make -j"$(nproc)" \
 log "making $SIMPLE_READ_EXAMPLE executable///"
 chmod 777 "$SIMPLE_READ_EXAMPLE/Bin/Arm-Release/SimpleRead"
 
-touch "$INSTALL_FLAG"
+touch "$OPENNISDK_INSTALL_FLAG"

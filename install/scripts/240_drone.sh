@@ -6,10 +6,8 @@ source "$MAIN_SCRIPTS_DIR/00_common.env"
 source "$MAIN_SCRIPTS_DIR/00_lib.sh"
 source "$CONFIG_SCRIPTS_DIR/00_common.env"
 
-INSTALL_FLAG="$LOG_DIR/drone"
-
 log "checking to see if previous install ran successfully..."
-if [ -f "$INSTALL_FLAG" ]; then 
+if [ -f "$DRONE_INSTALL_FLAG" ]; then 
     log "OpenNI SDK install was already run successfully..."
     return 0 
 fi 
@@ -32,4 +30,4 @@ else
     set +u; deactivate; set -u
 fi
 
-touch "$INSTALL_FLAG"
+touch "$DRONE_INSTALL_FLAG"

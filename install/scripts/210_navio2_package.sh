@@ -6,10 +6,9 @@ source "$MAIN_SCRIPTS_DIR/00_common.env"
 source "$MAIN_SCRIPTS_DIR/00_lib.sh"
 
 NAVIO2_GIT="https://github.com/emlid/Navio2.git"
-INSTALL_FLAG="$LOG_DIR/navio2-package"
 
 log "checking to see if previous install ran successfully..."
-if [ -f "$INSTALL_FLAG" ]; then 
+if [ -f "$NAVIO2_PACKAGE_INSTALL_FLAG" ]; then 
     log "Navio2 package install was already run successfully..."
     return 0 
 fi 
@@ -34,4 +33,4 @@ python3 -m pip install wheel
 python3 setup.py bdist_wheel
 set +u; deactivate; set -u
 
-touch "$INSTALL_FLAG"
+touch "$NAVIO2_PACKAGE_INSTALL_FLAG"
