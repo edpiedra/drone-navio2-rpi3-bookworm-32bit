@@ -75,7 +75,7 @@ log "installing rcio.fw..."
 sudo cp $RCIO_FIRMWARE /lib/firmware/
 
 log "adding Navio2 overlays..."
-sudo bash "$MAIN_SCRIPTS_DIR/111_navio2_overlays.sh"
+sudo bash "$MAIN_SCRIPTS_DIR/910_navio2_overlays.sh"
 
 touch "$NAVIO2_KERNEL_INSTALL_FLAG"
 

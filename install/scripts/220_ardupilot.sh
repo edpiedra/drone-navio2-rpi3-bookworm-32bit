@@ -34,6 +34,6 @@ log "building ArduCopter for Navio2..."
 ./waf copter
 
 log "adding ArduPilot as a service..."
-sudo bash "$MAIN_SCRIPTS_DIR/221_ardupilot_service.sh"
+sudo bash "$MAIN_SCRIPTS_DIR/920_ardupilot_service.sh"
 
 touch "$ARDUPILOT_INSTALL_FLAG"

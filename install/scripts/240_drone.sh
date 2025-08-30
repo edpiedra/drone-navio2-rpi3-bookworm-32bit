@@ -4,7 +4,6 @@ set -Eeuo pipefail
 SCRIPT_NAME=$(basename "$0")
 source "$MAIN_SCRIPTS_DIR/00_common.env"
 source "$MAIN_SCRIPTS_DIR/00_lib.sh"
-source "$CONFIG_SCRIPTS_DIR/00_common.env"
 
 log "checking to see if previous install ran successfully..."
 if [ -f "$DRONE_INSTALL_FLAG" ]; then 
