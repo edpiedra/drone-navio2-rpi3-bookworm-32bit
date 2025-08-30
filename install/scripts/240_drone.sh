@@ -13,7 +13,7 @@ fi
 
 log "installing requirements in drone virtual environment..."
 sudo apt-get install -y -qq python3-opencv python3-numpy 
-cd "$PROJECT_DIR"
+cd "$REPO"
 
 if [ ! -d .venv ]; then 
 log "creating virtual environment..."
