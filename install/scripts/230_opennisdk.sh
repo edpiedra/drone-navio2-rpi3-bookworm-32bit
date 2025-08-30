@@ -5,7 +5,7 @@ SCRIPT_NAME=$(basename "$0")
 source "$MAIN_SCRIPTS_DIR/00_common.env"
 source "$MAIN_SCRIPTS_DIR/00_lib.sh"
 
-OPENNISDK_SOURCE="$PROJECT_DIR/sdks/$ARM_VERSION"
+OPENNISDK_SOURCE="$REPO/sdks/$ARM_VERSION"
 
 log "checking to see if previous install ran successfully..."
 if [ -f "$OPENNISDK_INSTALL_FLAG" ]; then 
